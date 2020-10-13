@@ -1,19 +1,11 @@
 #range inputs
+start = 1
+end = int(input("Enter a Number Here: "))
+#defs
+num_list = range(start, end + 1)
+finalsum = sum(num_list)
 
-def sumrange():
-    start = 1
-    end = int(input("Enter a Number Here: "))
-    #defs
-    num_list = range(start, end + 1)
-    finalsum = sum(num_list)
-    print("Final Sum of Range = ", finalsum)
-
-sumrange()
-
-
-
-
-
+print("Final Sum of Range = ", finalsum)
 
 
 #Exes
