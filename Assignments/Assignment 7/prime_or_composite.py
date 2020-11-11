@@ -1,17 +1,22 @@
 def prime_or_composite(number):
-    """
-    - Add code in the defined function to figure out whether or not the given number is a prime number or not. 
 
-    - A prime number (or a prime) is a natural number greater than 1 that is not a product of two smaller natural numbers. A natural number greater than 1 that is not prime is called a composite number. - Wikipedia
+    from math import sqrt
+    from itertools import count, islice
     
-    - Take in a parameter called number and return “Prime” or “Composite”
-    """
-    pass
+    
+    if number < 2:
+        return "neither"
+
+    for i in islice(count(2), int(sqrt(number) - 1)):
+        if number % i == 0:
+            return "composite"
+
+    return "prime"
 
 if __name__ == "__main__":
-    numbers = [1, 2, 10, 31, 47, 89, 101, 103, 97, 187, 981, 19201]
-    # If you want to test the efficency of your algorithm add this number to the array above -7
-    # If you want to test the efficency of your algorithm add this number to the array above 47055833459
+    numbers = [-7, 1, 2, 10, 31, 47, 89, 101, 103, 97, 187, 981, 19201, 47055833459]
+
+
     answers = []
     for number in numbers:
         answers.append(prime_or_composite(number))
